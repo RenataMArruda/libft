@@ -37,16 +37,6 @@ static int	id_c(char const *s, int len, char c)
 	return (cs);
 }
 
-static int	str_len(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
-
 static char	**malloc_and_free_splitted(char **splitted, int a, int i, int j)
 {
 	if (i != j)
@@ -105,7 +95,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	len = str_len(s);
+	len = ft_const_strlen(s);
 	if (len == 0)
 		cs = -1;
 	else
